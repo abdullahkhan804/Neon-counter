@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Orbitron, sans-serif
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: radial-gradient(circle at 20% 20%, rgba(0, 174, 255, .25), transparent 25%), radial-gradient(circle at 80% 80%, rgba(162, 89, 255, .20), transparent 30%), linear-gradient(135deg, #030712, #111827, #020617)
+}
+body:before,
+body:after {
+    content: "";
+    position: fixed;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    filter: blur(90px);
+    z-index: -1;
+    animation: f 10s ease-in-out infinite
+}
+body:before {
+    background: #2563eb;
+    top: -120px;
+    left: -120px
+}
+body:after {
+    background: #9333ea;
+    bottom: -120px;
+    right: -120px;
+    animation-delay: 5s
+}
+@keyframes f {
+    50% {
+        transform: translateY(40px)
+    }
+}
+.card {
+    width: 420px;
+    padding: 40px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, .07);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, .15);
+    box-shadow: 0 0 20px rgba(59, 130, 246, .25), 0 0 80px rgba(147, 51, 234, .2);
+    text-align: center
+}
+.card h1 {
+    color: #fff;
+    letter-spacing: 8px;
+    margin-bottom: 35px
+}
+.circle {
+    width: 220px;
+    height: 220px;
+    margin: auto;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+.circle:before {
+    content: "";
+    position: absolute;
+    inset: -30px;
+    background: conic-gradient(transparent, #00bfff, transparent, #9333ea, transparent);
+    animation: s 4s linear infinite
+}
+.circle:after {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    background: #09111f;
+    border-radius: 50%
+}
+@keyframes s {
+    to {
+        transform: rotate(360deg)
+    }
+}
+#count,
+.circle p {
+    position: relative;
+    z-index: 2
+}
+#count {
+    font-size: 72px;
+    color: #fff;
+    text-shadow: 0 0 20px #3b82f6
+}
+.circle p {
+    color: #b8c4d9
+}
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 40px
+}
+.buttons button {
+    flex: 1;
+    padding: 18px;
+    border: none;
+    border-radius: 16px;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    transition: .3s
+}
+#dec {
+    background: #ef4444
+}
+#reset {
+    background: #f59e0b
+}
+#inc {
+    background: #22c55e
+}
+.buttons button:hover {
+    transform: translateY(-6px) scale(1.05)
+}
